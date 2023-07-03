@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('/products', ProductsController::class);
 Route::apiResource('/users', UsersController::class);
-Route::post('/auth', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/auth', [AuthController::class, 'login'])>name('auth.login');
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::apiResource('/orders', OrdersController::class);
