@@ -30,10 +30,10 @@ class Handler extends ExceptionHandler
 
     protected function unauthenticated($request, AuthenticationException $exception)
 {
-    echo "sws";
     if ($request->expectsJson()) {
         return response()->json(['error' => 'Unauthenticated.'], 401);
     }
-   
+    // ######### En esta línea cambias la ruta #########
+    return redirect()->guest('login');
 }
 }

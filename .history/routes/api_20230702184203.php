@@ -22,10 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/products', ProductsController::class);
+Route::apiResource('/orders', OrdersController::class);
 Route::apiResource('/users', UsersController::class);
 Route::post('/auth', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function() {
-    Route::apiResource('/orders', OrdersController::class);
     Route::get('/auth/logout', [AuthController::class, 'logout']);
 });

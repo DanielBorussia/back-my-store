@@ -12,6 +12,7 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
+        echo "no";
         if(!$request->expectsJson()){
             return response()->json(["status"=> 403, "message"=> "Not Autenthicate"]);
         }
